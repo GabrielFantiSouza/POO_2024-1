@@ -1,6 +1,6 @@
 public class Deck {
     public final int MAX_CARTAS = 104;
-    private Class[] cartas;
+    private Carta[] cartas;
     private int proxLivre;
 
     public Deck(){
@@ -8,7 +8,7 @@ public class Deck {
         proxLivre = 0;
     }
 
-    public void inserEmCarta(Carta carta){
+    public void insereEmCarta(Carta carta){
 
     }
 
