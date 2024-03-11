@@ -1,17 +1,17 @@
 public class Carta{
-    private int valor;
-    private String naipe;
+    private Valor valor;
+    private Naipe naipe;
     
-    public Carta(int valor, String naipe){
+    public Carta(Valor valor, Naipe naipe){//construtor
         this.valor = valor;
         this.naipe = naipe;
     }
 
-    public int getValor() {
+    public Valor getValor() {
         return valor;
     }
 
-    public String getNaipe() {
+    public Naipe getNaipe() {
         return naipe;
     }
 
