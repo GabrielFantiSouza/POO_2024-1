@@ -1,14 +1,14 @@
 public class Carta{
-    private Valor valor;
+    private ValorDeUmaCarta valorDeUmaCarta;
     private Naipe naipe;
     
-    public Carta(Valor valor, Naipe naipe){//construtor
-        this.valor = valor;
+    public Carta(ValorDeUmaCarta valor, Naipe naipe){//construtor
+        this.valorDeUmaCarta = valor;
         this.naipe = naipe;
     }
 
-    public Valor getValor() {
-        return valor;
+    public ValorDeUmaCarta getValorDeUmaCarta() {
+        return valorDeUmaCarta;
     }
 
     public Naipe getNaipe() {
@@ -17,7 +17,7 @@ public class Carta{
 
     @Override
     public String toString() {
-        return "Carta [valor=" + valor + ", naipe=" + naipe + "]";
+        return "Carta [valor=" + valorDeUmaCarta + ", naipe=" + naipe + "]";
     }
 
 }
