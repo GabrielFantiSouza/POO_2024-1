@@ -1,4 +1,4 @@
-public class CarroFerroviario{
+abstract class CarroFerroviario{
     private int idProprio;
     private String idTremAcoplado;
 
