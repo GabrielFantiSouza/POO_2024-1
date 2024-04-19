@@ -26,5 +26,6 @@ public class App {
         Vagao v6 = new Vagao(06, null, 15);
         g.insereNaListaVagoes(v6);
         g.printaListaVagoesLivres();
+        g.criaTrem();
     }
 }

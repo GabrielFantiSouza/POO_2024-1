@@ -5,20 +5,18 @@ public class Trem{
     private int idTrem;
     private ArrayList<Locomotiva> listaLocomotivasNoTrem; 
     private ArrayList<Vagao> listaVagoesNoTrem;
+    private Locomotiva locomotiva;
+    private Vagao vagao;
     public Scanner in = new Scanner(System.in);
     public Garagem g = new Garagem();
 
-    public Trem(int idTrem, ArrayList<Locomotiva> listaLocomotivasNoTrem, ArrayList<Vagao> listaVagoesNoTrem){
+    public Trem(int idTrem, Locomotiva locomotiva, Vagao vagao){
         this.idTrem = idTrem;
         this.listaLocomotivasNoTrem = listaLocomotivasNoTrem;
         this.listaVagoesNoTrem = listaVagoesNoTrem;
+        this.locomotiva = locomotiva;
+        listaLocomotivasNoTrem.add(locomotiva);
+        this.vagao = vagao;
     }
 
-    public void criaTrem(){
-        System.out.println("Digite o id do seu novo Trem:");
-        int idTrem = in.nextInt();
-        System.out.println("Digite o id da Locomotiva que deseja adicionar no seu trem: /n Locomotivas disponíveis");
-        g.printaListaLocomotivasLivres();
-
-    }
 }
