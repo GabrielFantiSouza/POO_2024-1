@@ -48,7 +48,7 @@ public class Garagem{
         for(int i=0; i<listaLocomotivas.size();i++){
             if(listaLocomotivas.get(i).getIdProprio()==(idLocomotiva)){
                 listaLocomotivas.get(i).setIdTremAcoplado(String.valueOf(idTrem));
-                Trem t = new Trem(idTrem, listaLocomotivas.get(i), null);
+                Trem t = new Trem(idTrem, listaLocomotivas.get(i));
                 listaTrens.add(t);
                 listaLocomotivas.remove(i);
                 return;
@@ -56,11 +56,8 @@ public class Garagem{
         }
     }
     
-    public void insereVagaoNoTrem(){
-        System.out.println("Digite qual Trem deseja colocar seu vagão:");
-        System.out.println("Trens disponíveis:");
-        printaListaTrens();
-        int idTrem = in.nextInt();
+    public void insereVagaoNoTrem(Trem trem){
+        int idTrem = trem.getIdTrem();
         System.out.println("Digite qual vagão deseja adicionar no Trem: ");
         System.out.println("Vagões disponíveis:");
         printaListaVagoesLivres();
@@ -80,11 +77,8 @@ public class Garagem{
 
     }
 
-    public void insereLocomotivaNoTrem(){
-        System.out.println("Digite qual Trem deseja colocar sua Locomotiva:");
-        System.out.println("Trens disponíveis:");
-        printaListaTrens();
-        int idTrem = in.nextInt();
+    public void insereLocomotivaNoTrem(Trem trem){
+        int idTrem = trem.getIdTrem();
         System.out.println("Digite qual Locomotiva deseja adicionar no Trem: ");
         System.out.println("Locomotivas disponíveis:");
         printaListaLocomotivasLivres();
@@ -106,4 +100,34 @@ public class Garagem{
             }
         }
     }
+
+    public void removeUltimoElementoTrem(Trem trem){
+        int idTrem = trem.getIdTrem();
+        for(int i=0; i<listaTrens.size(); i++){
+            if(listaTrens.get(i).getIdTrem()==idTrem){
+                if(listaTrens.get(i).getTamanhoListaVagoes()>0){
+                    listaVagoes.add(listaTrens.get(i).getVagaoPorIndice(listaTrens.get(i).getTamanhoListaVagoes()));
+                    listaVagoes.get(listaVagoes.size()).setIdTremAcoplado(null);
+                    listaTrens.get(i).getListaVagoesNoTrem().remove(trem.getTamanhoListaVagoes());
+                    System.out.println("Ultimo elemento removido do Trem, era um vagão!");
+                }else{
+                    listaLocomotivas.add(listaTrens.get(i).getLocomotivaPorIndice(listaTrens.get(i).getTamanhoListaLocomotivas()));
+                    listaTrens.get(i).getLocomotivaPorIndice(listaLocomotivas.size()).setIdTremAcoplado(null);
+                    listaTrens.get(i).getListaLocomotivasNoTrem().remove(trem.getTamanhoListaLocomotivas());
+                    System.out.println("Ultimo elemento removido do Trem, era uma locomotiva!");                   
+                }
+            }
+        return;
+        }
+    }
+    
+    public Trem achaListaTrens(int idTrem){
+        for(int i=0; i<listaTrens.size(); i++){
+            if(listaTrens.get(i).getIdTrem()==idTrem){
+                return listaTrens.get(i);
+            }
+        }
+        return null;
+    }
+
 }

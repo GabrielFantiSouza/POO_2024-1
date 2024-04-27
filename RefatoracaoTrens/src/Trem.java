@@ -9,12 +9,11 @@ public class Trem{
     private Vagao vagao;
     public Scanner in = new Scanner(System.in);
     
-    public Trem(int idTrem, Locomotiva locomotiva, Vagao vagao) {
+    public Trem(int idTrem, Locomotiva locomotiva) {
         this.idTrem = idTrem;
         this.listaLocomotivasNoTrem = new ArrayList<>();
         this.listaVagoesNoTrem = new ArrayList<>();
         this.locomotiva = locomotiva;
-        this.vagao = vagao;
         this.listaLocomotivasNoTrem.add(locomotiva);
     }
 
@@ -31,7 +30,27 @@ public class Trem{
     }
 
     public int getTamanhoListaVagoes(){
-        return listaVagoesNoTrem.size();
+        return this.listaVagoesNoTrem.size();
+    }
+
+    public int getTamanhoListaLocomotivas(){
+        return this.listaLocomotivasNoTrem.size();
+    }
+
+    public ArrayList<Vagao> getListaVagoesNoTrem(){
+        return this.listaVagoesNoTrem;
+    }
+
+    public Vagao getVagaoPorIndice(int index){
+        return this.listaVagoesNoTrem.get(index);
+    }
+
+    public ArrayList<Locomotiva> getListaLocomotivasNoTrem(){
+        return this.listaLocomotivasNoTrem;
+    }
+
+    public Locomotiva getLocomotivaPorIndice(int index){
+        return this.listaLocomotivasNoTrem.get(index);
     }
 
     @Override
