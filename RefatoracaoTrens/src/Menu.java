@@ -23,7 +23,7 @@ public class Menu{
                         g.printaListaTrens();
                         break;
                     case 4:
-                    
+                        g.desfazTrem();
                         break;
                 }
         }while (escolha!=5);
@@ -31,11 +31,12 @@ public class Menu{
 
     public static void menuEdita(Garagem g){
         int escolha;
-        do{
+        
         System.out.println("Qual Trem voce deseja editar?");
         System.out.println("Trens disponíveis: ");g.printaListaTrens();
         int idTrem = in.nextInt();
         Trem tremAchado = g.achaListaTrens(idTrem);
+        do{
         System.out.println("O que deseja fazer com o trem escolhido?");
         System.out.println("1 - Inserir uma Locomotiva;");
         System.out.println("2 - Inserir um Vagão;");

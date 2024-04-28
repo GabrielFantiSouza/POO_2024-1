@@ -42,7 +42,7 @@ public class Trem{
     }
 
     public Vagao getVagaoPorIndice(int index){
-        return this.listaVagoesNoTrem.get(index);
+        return listaVagoesNoTrem.get(index);
     }
 
     public ArrayList<Locomotiva> getListaLocomotivasNoTrem(){

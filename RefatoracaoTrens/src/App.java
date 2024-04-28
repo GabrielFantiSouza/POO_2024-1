@@ -4,7 +4,7 @@ public class App {
     static Garagem g = new Garagem();
 
     public static void main(String[] args) throws Exception {
-        setup(); //Popula locomotivas e vagoes
+        setup(); 
         Menu.menu(g);
     }
 

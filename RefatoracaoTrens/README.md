@@ -1,18 +1,16 @@
-## Getting Started
+Refatoração de Trens - Gabriel Fanti de Souza e Thais Kliemann Alexandre
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Novas implementações no exerício do sistema de Trens:
+    - Utilização de ArrayLists(anteriormente foi utilizado Vetores);
+    - Utilização de uma classe abstrata;
+    - Utilização do princípio de Herança para criar construtores de diversas classes, poupando e melhorando o desempenho do código.
 
-## Folder Structure
+    Vantagens:
+Com a utilização de ArrayLists ao invés de Vetores, foi notório a melhora da implementação dos métodos, com a utilização de vetores, foi resolvido diversos problemas, principalemente na manipulação de dados quando se diz aos tamanhos da listas(.length para arrays, e .size()para ArrayLists), visto que quando utilizado arraylists tudo se tornou muito mais simples.
+A utilização da classe abstrata alinhado com a herança facilitou a leitura e correção do código. No presente exercício, foi utilizado a classe CarroFerroviario como abstrata, de modo que as classes Locomotiva e Vagao pudessem herdar os métodos e atributos da classe "pai".
+    
+    Desvantagens:
+De modo geral, nao foi observado desvantagens, visto que o código fica muito mais limpo e de melhor organização. Unica parte que foi um pouco difícil, foi realmente implementar a Herança e Polimorfismo. Por mais que tenha sido visto e exercitado em aula, ainda assim tivemos algumas dificuldades de utilizar esses princípios da POO.
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+    Conclusão:
+Utilizar os princípios da POO, é melhor, e faz com que seu código fique mais Interessante e "profissional".
